@@ -8,6 +8,8 @@
     <owners>hafuu</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
+    <projectUrl>https://github.com/hafuu/AntiXmlns</projectUrl>
+    <licenseUrl>https://github.com/hafuu/AntiXmlns/blob/master/NYSL.txt</licenseUrl>
     <copyright>Copyright 2013</copyright>
     <tags>XML namespace</tags>
     <frameworkAssemblies>
