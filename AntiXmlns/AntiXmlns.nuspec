@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>hafuu</authors>
+    <owners>hafuu</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <copyright>Copyright 2013</copyright>
+    <tags>XML namespace</tags>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Xml" targetFramework="net40" />
+      <frameworkAssembly assemblyName="System.Xml.Linq" targetFramework="net40" />
+    </frameworkAssemblies>
+  </metadata>
+</package>
