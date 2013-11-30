@@ -1,2 +1,2 @@
 cd AntiXmlns
-..\.nuget\nuget.exe pack AntiXmlns.fsproj -Symbols
+..\.nuget\nuget.exe pack AntiXmlns.fsproj -Build -Symbols
