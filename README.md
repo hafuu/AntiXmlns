@@ -25,7 +25,7 @@ AntiXmlnsは、XMLの名前空間を無視してXMLを操作できるライブ�
 AntiXmlnsでは、次のように、名前空間を指定せずに要素にアクセスが可能となります。
 
     let xml = XElement.Parse("""<root xmlns="namespace"><foo>text</foo></root>""")
-    let foo: XElement = AntiXmlns.xpath "/foo" xml |> Seq.head
+    let foo: XElement = AntiXmlns.xpathElement "/foo" xml |> Seq.head
 
 XMLの操作には名前空間を使用しませんが、入出力となるXMLは名前空間の有無を問いません。
 入力XMLに名前空間が含まれていた場合、出力XMLにも名前空間が含まれます。
