@@ -56,7 +56,7 @@ let ``XElementに対してxmlnsを無視してxpathで検索できる`` x expect
   <elem1>aaaaaaa</elem1>
   <elem2><elem3 /></elem2>
 </root>""")
-  let actual = xpath x xml |> Seq.map (fun x -> x.Name.LocalName) |> Seq.toList
+  let actual = xpathElement x xml |> Seq.map (fun x -> x.Name.LocalName) |> Seq.toList
   actual |> should equal [ expected ]
 
 [<TestCase("/root/elem1", "elem1")>]
@@ -67,5 +67,5 @@ let ``XDocumentに対してxmlnsを無視してxpathで検索できる`` x expec
   <elem1>aaaaaaa</elem1>
   <elem2><elem3 /></elem2>
 </root>""")
-  let actual = xpath x doc |> Seq.map (fun x -> x.Name.LocalName) |> Seq.toList
+  let actual = xpathElement x doc |> Seq.map (fun x -> x.Name.LocalName) |> Seq.toList
   actual |> should equal [ expected ]

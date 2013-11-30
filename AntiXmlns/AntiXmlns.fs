@@ -1,5 +1,6 @@
 ﻿module AntiXmlns
 
+open System
 open System.Xml.XPath
 open System.Xml.Linq
 
@@ -45,6 +46,7 @@ let rec internal follow (xml: XElement) = function
 
 /// XPath式を使用して要素のコレクションを選択します。
 /// XMLに名前空間がある場合は無視するため、XPathに名前空間の指定は不要です。
+[<Obsolete("AntiXmlns.xpathElementを使用して下さい。")>]
 let xdocument_xpath xpath (dirtyDoc: XDocument) =
   let xml = removeNamespace dirtyDoc.Root
   let doc = XDocument(dirtyDoc.Declaration, box xml)
@@ -55,6 +57,7 @@ let xdocument_xpath xpath (dirtyDoc: XDocument) =
 
 /// XPath式を使用して要素のコレクションを選択します。
 /// XMLに名前空間がある場合は無視するため、XPathに名前空間の指定は不要です。
+[<Obsolete("AntiXmlns.xpathElementを使用して下さい。")>]
 let xelement_xpath xpath dirtyXml =
   (removeNamespace dirtyXml).XPathSelectElements(xpath)
   |> Seq.map indexPath
@@ -62,7 +65,7 @@ let xelement_xpath xpath dirtyXml =
 
 /// XPath式を使用して要素のコレクションを選択します。
 /// XMLに名前空間がある場合は無視するため、XPathに名前空間の指定は不要です。
-let xpath xpath (x: XNode) =
+let xpathElement xpath (x: XNode) =
   let target, dirtyRoot =
     match x with
     | :? XDocument as dirtyDoc ->
@@ -77,3 +80,8 @@ let xpath xpath (x: XNode) =
   target.XPathSelectElements(xpath)
   |> Seq.map indexPath
   |> Seq.map (follow dirtyRoot)
+
+/// XPath式を使用して要素のコレクションを選択します。
+/// XMLに名前空間がある場合は無視するため、XPathに名前空間の指定は不要です。
+[<Obsolete("AntiXmlns.xpathElementを使用して下さい。")>]
+let xpath xpath (x: XNode) = xpathElement xpath x
